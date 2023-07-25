@@ -1,6 +1,6 @@
-**DiplomQA**
+## **DiplomQA**
 
-[План тестирования](jetbrains://idea/navigate/reference?project=untitled3&path=Plan.md)
+1. [План тестиования](https://github.com/samDarya17/DiplomQa/blob/master/Plan.md) 
 
 
 

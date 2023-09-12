@@ -1,62 +1,71 @@
 package tests;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Step;
-import lombok.extern.log4j.Log4j2;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.ITestContext;
-import org.testng.annotations.*;
-import pages.HomePage;
-import pages.LoginPage;
-import utils.DriverFactory;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+import pages.*;
 import utils.PropertyReader;
-import utils.TestListener;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
-@Listeners(TestListener.class)
-@Log4j2
+
 public abstract class BaseTest {
+    String email, password, url;
+    WebDriver driver;
+    LoginPage loginPage;
+    PlatformSelectPage platformSelectPage;
+    UserProfilePage userProfilePage;
+    UserModalProfilePage userModalProfilePage;
+    WorkoutCalendarPage workoutCalendarPage;
 
-    protected final static String EMAIL = System.getenv().getOrDefault("FINALSURGE_USERNAME", PropertyReader.getProperty("finalsurge.username"));
-    protected final static String PASSWORD = System.getenv().getOrDefault("FINALSURGE_PASSWORD", PropertyReader.getProperty("finalsurge.password"));
-    private static final By USER_IMAGE = By.id("LayoutProfilePic");
-    protected WebDriver driver;
-    protected WebDriverWait wait;
-    protected LoginPage loginPage;
-    protected HomePage homePage;
 
 
     @Parameters({"browser"})
-    @BeforeClass(alwaysRun = true)
-    @Step("Открытие браузера")
-    public void setUp(ITestContext testContext, @Optional("chrome") String browser) {
-        log.info("driver initialization");
-        System.getProperty("browser");
-        driver = DriverFactory.getDriver(browser);
-        testContext.setAttribute("driver", driver);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
-        wait = new WebDriverWait(driver, 30);
+    @Step("Настройка и открытие браузера")
+    @BeforeMethod
+    public void setUp(@Optional("chrome") String browser) {
+
+        if (browser.equals("chrome")) {
+            WebDriverManager.chromedriver().setup();
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--start-maximized");
+//        options.addArguments("--headless");
+            driver = new ChromeDriver(options);
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+
+
+        } else{
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
+            driver.manage().window().maximize();
+
+        }
+        url = System.getenv().getOrDefault("FINALSURGE_URL", PropertyReader.getProperty("finalsurge.url"));
+        email = System.getenv().getOrDefault("FINALSURGE_EMAIL", PropertyReader.getProperty("finalsurge.email"));
+        password = System.getenv().getOrDefault("FINALSURGE_PASSWORD", PropertyReader.getProperty("finalsurge.password"));
+
         loginPage = new LoginPage(driver);
-        homePage = new HomePage(driver);
+        platformSelectPage = new PlatformSelectPage(driver);
+        userProfilePage = new UserProfilePage(driver);
+        userModalProfilePage = new UserModalProfilePage(driver);
+        workoutCalendarPage = new WorkoutCalendarPage(driver);
+
+
+
+
+
     }
 
-    @AfterClass(alwaysRun = true)
     @Step("Закрытие браузера")
-    public void tearDown() {
-        driver.manage().deleteAllCookies();
-        log.info("quit from driver");
+    @AfterMethod(alwaysRun = true)
+    public void tearDown(){
         driver.quit();
     }
-
-    public void navigate() {
-        loginPage.open().login(EMAIL, PASSWORD);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(USER_IMAGE));
-    }
-
-
 }

@@ -1,46 +1,48 @@
 package tests;
-
-import io.qameta.allure.Description;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-
+import java.time.Duration;
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class LoginTest extends BaseTest {
 
-    @BeforeMethod(alwaysRun = true)
-    public void navigate() {
-        loginPage.open();
+    @Test(description = "Input valid user data")
+    public void inputValidEmailAndPassword() {
+        loginPage.open()
+                .inputEmailAndPass(email,password)
+                .clickSignInButton();
+
+        assertTrue(platformSelectPage.isPageOpen());
+    }
+    @Test(description = "Input an invalid email and a valid password")
+    public void inputInvalidEmailAndValidPassword(){
+        loginPage.open()
+                .inputEmailAndPass("ysegw@mailto.plus","Ab202010")
+                .clickSignInButton();
+
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class='notification__content']")));
+
+        assertEquals(loginPage.getErrorMessage(),"Invalid login credentials. Please try again.","Текст сообщения неверный или отсутствует");
+    }
+    @Test(description = "Leave the email field blank and input a valid password")
+    public void leaveEmailEmptyAndInputValidPassword(){
+        loginPage.open()
+                .inputEmailAndPass("","Ab202010")
+                .clickSignInButton();
+
+        assertEquals(loginPage.getEmailErrorMessage(),"Email is required","Текст сообщения неверный или отсутствует");
+    }
+    @Test(description = "Input a valid email and leave the password field blank")
+    public void inputValidEmailAndLeavePasswordEmpty(){
+        loginPage.open()
+                .inputEmailAndPass("ocysegw@mailto.plus","")
+                .clickSignInButton();
+
+        assertEquals(loginPage.getPasswordErrorMessage(),"Password is required","Текст сообщения неверный или отсутствует");
     }
 
-    @AfterMethod(alwaysRun = true)
-    public void clearSession() {
-        driver.manage().deleteAllCookies();
-        driver.navigate().refresh();
-    }
-
-    @Test(description = "Положительный тест входа в систему FinalSurge", groups = {"Smoke"})
-    @Description(value = "Положительный тест входа в систему FinalSurge")
-    public void positiveLoginTest() {
-        loginPage.login(EMAIL, PASSWORD);
-        assertTrue(homePage.isPageOpened());
-    }
-
-    @Test(description = "Отрицательный тест входа в систему FinalSurge", groups = {"Negative"}, dataProvider = "Negative Login Test Data")
-    @Description(value = "Отрицательный тест входа в систему FinalSurge")
-    public void negativeLoginTest(String email, String password) {
-        loginPage.login(email, password);
-        assertTrue(loginPage.isPageOpened());
-    }
-
-    @DataProvider(name = "Отрицательные данные проверки входа")
-    public Object[][] getNegativeLoginData() {
-        return new Object[][]{
-                {"", ""},
-                {EMAIL, ""},
-                {EMAIL, "123"},
-        };
-    }
 }

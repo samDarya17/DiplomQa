@@ -5,78 +5,84 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf56c108-b20e-4c4c-90bc-88d720a2d9ab" name="Changes" comment="тест план/чек лист/">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/elements/BaseElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/elements/Dropdown.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/elements/Input.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/elements/RadioButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/elements/RadioButtonForCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/enums/ActiveType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/enums/BikeBrand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/enums/DistTypeForCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/enums/DistanceType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/enums/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/enums/Feeling.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/enums/GenderType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/enums/HeightType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/enums/PaceType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/enums/PerceivedEffort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/enums/RaceDistance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/enums/TemperatureType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/enums/WeightType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/enums/WindSpeedType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/modals/AddNewWorkoutModal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/modals/BaseModal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/modals/CaloricNeedsModal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/modals/CustomViewModal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/modals/EditBikeModal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/modals/HansonsCalculatorModal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/modals/IntensityCalculatorModal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/modals/PaceCalculatorModal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/modals/PrintWorkoutModal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/modals/TinmanCalculatorModal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/models/Bike.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/models/CaloricNeeds.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/models/DatePeriod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/models/Report.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/models/Workout.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/models/WorkoutCalculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/BikesPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/DailyVitalsPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/PrintPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/WorkoutAddPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/WorkoutDetailsPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/WorkoutReportPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/AddWorkoutTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/DailyVitalsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/EquipmentTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/LogoutTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/OtherCalculatorsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/PrintWorkoutsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/WorkoutCalculatorsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/WorkoutReportTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/AllureUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/AnnotationTransformer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/DriverFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/PropertyReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/RetryAnalyzer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/TestDataHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/utils/TestListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/config.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/log4j2-test.yaml.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/negative.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/regression.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/smoke.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/elements/Checkboxes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/elements/DropDown.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/models/UserProfile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/models/UserProfileFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/PlatformSelectPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/UserModalProfilePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/UserProfilePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/WorkoutCalendarPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/PlatformSelectTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/UserProfileTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Plan.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Plan.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/chek.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/chek.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/elements/BaseElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/elements/Dropdown.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/elements/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/elements/Input.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/elements/RadioButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/elements/RadioButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/elements/RadioButtonForCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/enums/ActiveType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/enums/BikeBrand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/enums/DistTypeForCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/enums/DistanceType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/enums/Event.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/enums/Feeling.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/enums/GenderType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/enums/HeightType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/enums/PaceType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/enums/PerceivedEffort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/enums/RaceDistance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/enums/TemperatureType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/enums/WeightType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/enums/WindSpeedType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/modals/AddNewWorkoutModal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/modals/BaseModal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/modals/CaloricNeedsModal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/modals/CustomViewModal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/modals/EditBikeModal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/modals/HansonsCalculatorModal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/modals/IntensityCalculatorModal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/modals/PaceCalculatorModal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/modals/PrintWorkoutModal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/modals/TinmanCalculatorModal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/Bike.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/CaloricNeeds.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/DatePeriod.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/Report.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/Workout.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/models/WorkoutCalculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BikesPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/DailyVitalsPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PrintPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/WorkoutAddPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/WorkoutDetailsPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/WorkoutReportPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/AddWorkoutTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/DailyVitalsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/EquipmentTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LogoutTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/OtherCalculatorsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/PrintWorkoutsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/WorkoutCalculatorsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/WorkoutReportTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/AllureUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/AnnotationTransformer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/DriverFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/PropertyReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utils/PropertyReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/RetryAnalyzer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/TestDataHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utils/TestListener.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/allure.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/allure.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/negative.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/regression.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/smoke.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +130,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/q1022 Java/Salseforce22&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/q1022 Java/DiplomQa1&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -132,11 +138,14 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="tests" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\q1022 Java\untitled3\docs" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.LoginTest.negativeLoginTest">
+  <component name="RunManager" selected="TestNG.LoginTest">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="FinalSurge" />
       <method v="2">
@@ -150,7 +159,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTest.loginUserIsValidData" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="DailyVitalsTest.viewVitalsTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="JEFIT" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.DailyVitalsTest" />
+      <option name="METHOD_NAME" value="viewVitalsTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="FinalSurgeProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.LoginTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginTest.inputValidEmailAndPassword" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="JEFIT" />
       <extension name="coverage">
         <pattern>
@@ -160,7 +204,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.LoginTest" />
-      <option name="METHOD_NAME" value="loginUserIsValidData" />
+      <option name="METHOD_NAME" value="inputValidEmailAndPassword" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -186,10 +230,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LoginTest.positiveLoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="JEFIT" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.LoginTest" />
+      <option name="METHOD_NAME" value="positiveLoginTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.LoginTest" />
+        <item itemvalue="TestNG.LoginTest.inputValidEmailAndPassword" />
+        <item itemvalue="TestNG.DailyVitalsTest.viewVitalsTest" />
+        <item itemvalue="TestNG.LoginTest.positiveLoginTest" />
         <item itemvalue="TestNG.LoginTest.negativeLoginTest" />
-        <item itemvalue="TestNG.LoginTest.loginUserIsValidData" />
       </list>
     </recent_temporary>
   </component>
@@ -265,7 +330,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690305493474</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="тест план/чек лист/">
+      <created>1690879027621</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1690879027621</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

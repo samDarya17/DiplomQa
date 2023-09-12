@@ -6,57 +6,64 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 @Log4j2
+
 public class LoginPage extends BasePage {
 
-    private static final By EMAIL_INPUT = By.id("login_name");
-    private static final By PASSWORD_INPUT = By.id("login_password");
-    private static final By LOGIN_BUTTON = By.xpath("//button[text()='Login']");
-    private static final By ACCOUNT_LOGOUT_MESSAGE = By.cssSelector("[class^='alert']");
+
+    public static final By SIGN_IN_TITLE = By.xpath("//h2[contains(text(), 'Sign In')]");
+    public static final By EMAIL_INPUT = By.xpath("//input[@name='email']");
+    public static final By PASSWORD_INPUT = By.xpath("//input[@name='password']");
+    public static final By SIGN_IN_BUTTON = By.xpath("//button[@type='submit']");
+    public static final By EMAIL_ERROR_MESSAGE = By.xpath("//div[contains(text(), 'Email is required')]");
+    public static final By PASSWORD_ERROR_MESSAGE = By.xpath("//div[contains(text(), 'Password is required')]");
+    public static final By ERROR_MESSAGE = By.xpath("//div[@class='notification__content']");
 
 
     public LoginPage(WebDriver driver) {
+
         super(driver);
     }
 
-    @Step("Ввести адрес  электронной почты: {email}")
-    public void setEmailInput(String email) {
-        log.info("Ввести адрес  электронной почты: {email}");
-        driver.findElement(EMAIL_INPUT).sendKeys(email);
-    }
-
-    @Step("Ввести пароль: {пароль}")
-    public void setPasswordInput(String password) {
-        log.info("Ввести пароль: {пароль}");
-        driver.findElement(PASSWORD_INPUT).sendKeys(password);
-    }
-
-    @Step("Нажать кнопки «Войти»")
-    public void clickLoginButton() {
-        log.info("Нажать кнопки «Войти»");
-        clickButton(LOGIN_BUTTON);
-    }
-
-    @Step("Войдите на Finalsurge.com с именем пользователя {email} и паролем {password}.")
-    public void login(String email, String password) {
-        setEmailInput(email);
-        setPasswordInput(password);
-        clickLoginButton();
-    }
-
-    @Step("Сообщения об успешном выходе из системы")
-    public String getLogoutMessage() {
-        log.info("Сообщения об успешном выходе из системы");
-        return driver.findElement(ACCOUNT_LOGOUT_MESSAGE).getText();
-    }
-
-    @Override
-    public boolean isPageOpened() {
-        return elementIsVisible(LOGIN_BUTTON);
-    }
-
-    @Override
+    @Step("Open the login page")
     public LoginPage open() {
-        driver.get(BASE_URl);
+        driver.get(URL + "login");
+        log.info("Open Login page with URL: " + URL + "login");
         return this;
+    }
+
+    @Step("Input email and password")
+    public LoginPage inputEmailAndPass(String email, String pass) {
+        driver.findElement(EMAIL_INPUT).sendKeys(email);
+        log.info("Input email in the field" + email);
+        driver.findElement(PASSWORD_INPUT).sendKeys(pass);
+        log.info("Input password in the field:" + pass);
+        return this;
+    }
+    @Step("Click on Sign In Button")
+    public PlatformSelectPage clickSignInButton() {
+        driver.findElement(SIGN_IN_BUTTON).click();
+        log.info("Click on Sign In Button:" + SIGN_IN_BUTTON);
+        return new PlatformSelectPage(driver);
+    }
+    @Step("Get email error message")
+    public String getEmailErrorMessage() {
+        log.info("Take email error message:"+ EMAIL_ERROR_MESSAGE);
+        return driver.findElement(EMAIL_ERROR_MESSAGE).getText();
+    }
+    @Step("Get password error message")
+    public String getPasswordErrorMessage() {
+        log.info("Take password error message:"+PASSWORD_ERROR_MESSAGE);
+        return driver.findElement(PASSWORD_ERROR_MESSAGE).getText();
+    }
+    @Step("Get error message")
+    public String getErrorMessage() {
+        log.info("Take error message:"+ERROR_MESSAGE);
+        return driver.findElement(ERROR_MESSAGE).getText();
+    }
+    @Step("Find element to make sure that page is open")
+    @Override
+    public boolean isPageOpen() {
+        log.info("Find element" + SIGN_IN_TITLE);
+        return isExist(SIGN_IN_TITLE);
     }
 }

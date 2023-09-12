@@ -1,32 +1,33 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+
+
 
 public abstract class BasePage {
-
-    protected static final String BASE_URl = "https://log.finalsurge.com";
     WebDriver driver;
+    WebDriverWait wait;
+    final String URL = "https://www.finalsurge.com/";
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
+        Duration timeoutDuration = Duration.ofSeconds(20);
+        WebDriverWait wait = new WebDriverWait(driver,timeoutDuration);
     }
 
-    public abstract boolean isPageOpened();
+    public abstract boolean isPageOpen();
 
-    public abstract BasePage open();
+    public boolean isExist(By locator) {
+        try {
+            return driver.findElement(locator).isDisplayed();
+        } catch (NoSuchElementException e) {
+            return false;
 
-    public boolean elementIsVisible(By locator) {
-        return driver.findElement(locator).isDisplayed();
-    }
-
-    public void clickButton(By locator) {
-        driver.findElement(locator).click();
-    }
-
-    public void scrollIntoView(WebElement element) {
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+        }
     }
 }

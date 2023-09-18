@@ -2,28 +2,28 @@ package tests;
 
 import models.UserProfile;
 import models.UserProfileFactory;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import static org.testng.Assert.*;;
 
 public class UserProfileTest extends BaseTest {
 
-    @Test(description = "Open and edit User profile page")
+    @Test(description = "Edit User profile page")
     public void userProfileShouldBeEdited() {
         loginPage.open()
                 .inputEmailAndPass(email, password)
-                .clickSignInButton();
-        platformSelectPage.selectPlatformAndClick();
-        workoutCalendarPage.open()
+                .clickSignInButton()
+                .selectPlatformAndClick()
                 .clickProfileIcon()
-                .selectMyProfileFromDropdown();
-        userProfilePage.clickEditProfileButton();
+                .selectMyProfileFromDropdown()
+                .clickEditProfileButton();
 
         UserProfile userProfile = UserProfileFactory.get();
 
-        userModalProfilePage.editProfile(userProfile)
-                .clickSaveButton();
+        userModalProfilePage.editProfile(userProfile);
 
-        assertTrue(userProfilePage.isPageOpen(), "Страница не открылась");
-
+        assertTrue(userProfilePage.isPageOpen(), "The page did not open");
     }
 }

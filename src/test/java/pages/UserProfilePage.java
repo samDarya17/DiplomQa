@@ -9,14 +9,22 @@ import org.openqa.selenium.WebDriver;
 public class UserProfilePage extends BasePage{
     public static final By EDIT_PROFILE_BUTTON = By.xpath("//span[normalize-space()='Edit Profile']");
 
+    public static final By CALENDAR_BUTTON = By.xpath("//*[@class='icsw16-day-calendar']");
+
     public UserProfilePage(WebDriver driver) {
         super(driver);
     }
     @Step("Open edit profile")
-    public UserProfilePage clickEditProfileButton() {
+    public UserModalProfilePage clickEditProfileButton() {
         driver.findElement(EDIT_PROFILE_BUTTON).click();
         log.info("Click edit profile button:" + EDIT_PROFILE_BUTTON);
-        return new UserProfilePage(driver);
+        return new UserModalProfilePage(driver);
+    }
+
+    public UserModalProfilePage goToTrainingCalendar() {
+        log.info("Clicking on the Calendar button");
+        driver.findElement(CALENDAR_BUTTON).click();
+        return new UserModalProfilePage(driver);
     }
 
     @Step("Find element to make sure that page is open")

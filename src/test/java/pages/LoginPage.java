@@ -27,7 +27,7 @@ public class LoginPage extends BasePage {
     @Step("Open the login page")
     public LoginPage open() {
         driver.get(URL + "login");
-        log.info("Open Login page with URL: " + URL + "login");
+        log.info("Open Login page with URL:" + URL + "login");
         return this;
     }
 
@@ -63,7 +63,7 @@ public class LoginPage extends BasePage {
     @Step("Find element to make sure that page is open")
     @Override
     public boolean isPageOpen() {
-        log.info("Find element" + SIGN_IN_TITLE);
+        log.info("Find element:" + SIGN_IN_TITLE);
         return isExist(SIGN_IN_TITLE);
     }
 }

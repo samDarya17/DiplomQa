@@ -7,6 +7,17 @@ FinalSurge.com — это обучающая и коучинговая плат�
 1. Java JDK 1.11
 
 2. Мавен
+3. Design-patterns:
+
+*Page Object
+
+*Fluent/Chain of invocation
+
+*Loadable Component
+
+*Page Element/Wrappers
+
+*Builder/Factory
 
 Настройка конфига
 1. Клонируйте этот репозиторий.

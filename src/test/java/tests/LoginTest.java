@@ -1,50 +1,63 @@
 package tests;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static org.testng.Assert.*;
+
 import org.testng.annotations.Test;
 
-import java.time.Duration;
-import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 public class LoginTest extends BaseTest {
 
-    @Test(description = "Input valid user data")
-    public void inputValidEmailAndPassword() {
+    @Test(description = "Check that validation is successful when entering a login and password")
+    public void emailAndPasswordValidDate() {
         loginPage.open()
-                .inputEmailAndPass(email,password)
+                .inputEmailAndPassword(email, password)
                 .clickSignInButton();
 
-        assertTrue(platformSelectPage.isPageOpen());
+        assertTrue(platformSelectPage.isPageOpen(), "Пользователь не авторизован");
+
     }
-    @Test(description = "Input an invalid email and a valid password")
-    public void inputInvalidEmailAndValidPassword(){
-        loginPage.open()
-                .inputEmailAndPass("ysegw@mailto.plus","Vara8908333")
+
+    @Test(description = "leave the password field blank")
+    public void blankPasswordField() {
+        loginPage
+                .open()
+                .inputEmailAndPassword(email, "")
                 .clickSignInButton();
 
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//div[@class='notification__content']")));
-
-        assertEquals(loginPage.getErrorMessage(),"Invalid login credentials. Please try again.","Текст сообщения неверный или отсутствует");
+        assertEquals(loginPage.getPasswordErrorMessage(), "Password is required",
+                "Текст сообщения неверный или отсутствует");
     }
-    @Test(description = "Leave the email field blank and input a valid password")
-    public void leaveEmailEmptyAndInputValidPassword(){
+
+    @Test(description = "leave the email field blank")
+    public void blankEmailField() {
         loginPage.open()
-                .inputEmailAndPass("","Vara8908333")
+                .inputEmailAndPassword("", password)
                 .clickSignInButton();
 
-        assertEquals(loginPage.getEmailErrorMessage(),"Email is required","Текст сообщения неверный или отсутствует");
+        assertEquals(loginPage.getEmailErrorMessage(), "Email is required",
+                "Текст сообщения неверный или отсутствует");
     }
-    @Test(description = "Input a valid email and leave the password field blank")
-    public void inputValidEmailAndLeavePasswordEmpty(){
+
+    @Test(description = "invalid email")
+    public void invalidEmail() {
         loginPage.open()
-                .inputEmailAndPass("dashikasam@gmail.com","")
+                .inputEmailAndPassword("vvvdufna@mailto.plus", password)
                 .clickSignInButton();
 
-        assertEquals(loginPage.getPasswordErrorMessage(),"Password is required","Текст сообщения неверный или отсутствует");
+        assertEquals(loginPage.getErrorMessage(), "Invalid login credentials. Please try again.",
+                "Текст сообщения неверный или отсутствует");
     }
+
+    @Test(description = "invalid password")
+    public void invalidPassword() {
+        loginPage.open()
+                .inputEmailAndPassword(email, "12345Alkkk")
+                .clickSignInButton();
+
+        assertEquals(loginPage.getErrorMessage(), "Invalid login credentials. Please try again.",
+                "Текст сообщения неверный или отсутствует");
+    }
+
 
 }

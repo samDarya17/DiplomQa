@@ -3,27 +3,29 @@ package models;
 import com.github.javafaker.Faker;
 
 public class WorkoutQuickAddFactory {
+
     static Faker faker = new Faker();
-    public static WorkoutQuickAdd getData(){
+
+    public static WorkoutQuickAdd fillWorkoutQuickData(){
         return WorkoutQuickAdd.builder()
-                .date("09/12/2023")
-                .time("02:00 PM")
-                .activityType("Bike")
-                .workoutName(faker.artist().name())
-                .workoutDescription(faker.lorem().sentence())
-                .showPlannedDistance(faker.random().nextBoolean())
-                .plannedDistanceType("km")
-                .plannedDistance(faker.random().nextInt(3,5).toString())
-                .plannedDuration("00:40:00")
-                .distance(faker.random().nextInt(2,6).toString())
-                .distanceType("km")
-                .duration("01:00:00")
-                .pace("08:00")
-                .paceType("min/mi")
-                .howIFelt("Normal")
-                .perceivedEffort("4 (Moderate)")
-                .postNotes(faker.lorem().sentence())
-                .saveToLibrary(true)
+                .date("11/10/2023")
+                .time("06:15 AM")
+                .activityType("Run")
+                .workoutName(faker.gameOfThrones().character())
+                .workoutDescription(faker.gameOfThrones().quote())
+                .showPlanned(faker.random().nextBoolean())
+                .plannedDistanceType("mi")
+                .plannedDistance(faker.random().nextInt(2,15).toString())
+                .plannedDuration("01:48:22")
+                .distance(faker.random().nextInt(2,15).toString())
+                .distType("mi")
+                .duration("01:22:22")
+                .pace("15:47")
+                .paceType("kph")
+                .howIFelt("Good")
+                .perceivedEffort("1 (Very Light)")
+                .postDesc(faker.gameOfThrones().quote())
+                .saveLibrary(true)
                 .build();
     }
 }

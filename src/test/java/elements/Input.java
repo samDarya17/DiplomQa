@@ -4,41 +4,34 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
-import io.qameta.allure.Step;
 
 @Log4j2
 public class Input {
-    private final String inputLocator = "%s";
-    private final WebDriver driver;
-    private final String id;
+    String inputLocator = "%s";
+    WebDriver driver;
+    String id;
 
     public Input(WebDriver driver, String label) {
         this.driver = driver;
         this.id = label;
     }
 
-    private By getInputLocator() {
-        return By.id(String.format(inputLocator, this.id));
-    }
-
-    private void clearInput() {
-        driver.findElement(getInputLocator()).clear();
-        log.info("Clear input with id: " + id);
-    }
-
-    @Step("Write text: {text} into input")
     public void write(String text) {
-        clearInput();
-        driver.findElement(getInputLocator()).sendKeys(text);
-        log.info("Write into input with label: " + id + ", text: " + text);
+        driver.findElement(By.id(String.format(inputLocator, this.id))).clear();
+        log.info("Clear input with id  " + this.id);
+        driver.findElement(By.id(String.format(inputLocator, this.id))).sendKeys(text);
+        log.info("Write into input with label: " + id + "text: " + text);
     }
 
-    @Step("Input BDay: {text}")
     public void inputBDay(String text) {
-        clearInput();
+        driver.findElement(By.id(String.format(inputLocator, this.id))).clear();
+        log.info("Clear input BDay with id:  " + inputLocator);
         Actions action = new Actions(driver);
-        action.doubleClick(driver.findElement(getInputLocator())).perform();
-        driver.findElement(getInputLocator()).sendKeys(text);
-        log.info("Write into input BDay with label: " + id + ", text: " + text);
+        action.doubleClick(driver.findElement(By.id(String.format(inputLocator, this.id)))).perform();
+        driver.findElement(By.id(String.format(inputLocator, this.id))).sendKeys(text);
+        log.info("Write into input BDay by id: " + this.id + "text: " + text);
+
     }
+
+
 }

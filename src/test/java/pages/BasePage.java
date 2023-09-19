@@ -5,18 +5,22 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.PropertyReader;
+
 import java.time.Duration;
+
 @Log4j2
 public abstract class BasePage {
+
     WebDriver driver;
     WebDriverWait wait;
-    final String URL =System.getenv().getOrDefault("FINALSURGE_URL",
+
+
+    final String BASE_URL = System.getenv().getOrDefault("FINAL_SURGE-URL",
             PropertyReader.getProperty("finalsurge.url"));
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
-        Duration timeoutDuration = Duration.ofSeconds(20);
-        WebDriverWait wait = new WebDriverWait(driver,timeoutDuration);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(15));
     }
 
     public void clickElementByJavascript(WebElement element) {
@@ -25,13 +29,16 @@ public abstract class BasePage {
     }
 
     public abstract boolean isPageOpen();
-    @Step("Find element to make sure that page is open")
+
+    @Step("Checking for locator presence")
     public boolean isExist(By locator) {
         try {
             return driver.findElement(locator).isDisplayed();
-        } catch (NoSuchElementException e) {
+        } catch (NoSuchElementException exception) {
+            log.error("Page is not loaded");
             return false;
-
         }
     }
+
+
 }

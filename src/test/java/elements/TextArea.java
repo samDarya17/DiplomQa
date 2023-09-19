@@ -7,18 +7,20 @@ import org.openqa.selenium.WebDriver;
 
 @Log4j2
 public class TextArea {
+
     String textAreaLocator = "%s";
+
     WebDriver driver;
     String id;
 
-    public TextArea(WebDriver driver, String id) {
+    public TextArea(WebDriver driver, String label) {
         this.driver = driver;
-        this.id = id;
+        this.id = label;
     }
 
-    @Step("Fill Text Area with {text}")
-    public void fillDescription(String text) {
-        driver.findElement(By.id(String.format(textAreaLocator, id))).sendKeys(text);
-        log.info("Write " + text + " into Text Area with id " + id);
+    @Step("Write the text in TextArea")
+    public void write(String text) {
+        driver.findElement(By.id(String.format(textAreaLocator, this.id))).sendKeys(text);
+        log.info("Write " + text + " into Text Area with id " + this.id);
     }
 }

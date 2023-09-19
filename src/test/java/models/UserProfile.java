@@ -13,10 +13,9 @@ public class UserProfile {
     String gender;
     String birthday;
     String weight;
-    String weightType;
+    String weightMeasure;
     String country;
     String state;
     String city;
-    String zipCode;
-
+    String zip;
 }

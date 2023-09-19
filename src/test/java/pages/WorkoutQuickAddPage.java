@@ -1,6 +1,6 @@
 package pages;
 
-import elements.Checkbox;
+import elements.Checkboxes;
 import elements.DropDown;
 import elements.Input;
 import elements.TextArea;
@@ -16,42 +16,44 @@ public class WorkoutQuickAddPage extends BasePage {
     public static final By QUICK_ADD_WORKOUT_TITLE = By.id("WorkoutAddHeader");
     public static final By ADD_WORKOUT_BUTTON = By.id("saveButton");
 
-
     public WorkoutQuickAddPage(WebDriver driver) {
         super(driver);
     }
 
-    @Step("Edit Workout: {workoutQuickAdd}")
-    public WorkoutQuickAddPage editWorkout(WorkoutQuickAdd workoutQuickAdd) {
+    @Step("Add workout through the quick add")
+    public void fillInFormQuickWorkout(WorkoutQuickAdd workoutQuickAdd) {
         new Input(driver, "WorkoutDate").write(workoutQuickAdd.getDate());
-        new DropDown(driver, "WorkoutTime").selectDropdown(workoutQuickAdd.getTime());
-        new DropDown(driver, "ActivityType").selectDropdown(workoutQuickAdd.getActivityType());
+        new DropDown(driver, "WorkoutTime").selectOption(workoutQuickAdd.getTime());
+        new DropDown(driver, "ActivityType").selectOption(workoutQuickAdd.getActivityType());
         new Input(driver, "Name").write(workoutQuickAdd.getWorkoutName());
-        new TextArea(driver, "Desc").fillDescription(workoutQuickAdd.getWorkoutDescription());
-        new Checkbox(driver, "PlannedWorkout").toggleCheckbox();
-        new Input(driver, "PDistance").write(workoutQuickAdd.getPlannedDistance());
-        new DropDown(driver, "PDistType").selectDropdown(workoutQuickAdd.getPlannedDistanceType());
-        new Input(driver, "PDuration").write(workoutQuickAdd.getPlannedDuration());
+        new TextArea(driver, "Desc").write(workoutQuickAdd.getWorkoutDescription());
+        new Checkboxes(driver, "PlannedWorkout").tickCheckbox(workoutQuickAdd.isShowPlanned());
+        if (workoutQuickAdd.isShowPlanned()) {
+            new Input(driver, "PDistance").write(workoutQuickAdd.getPlannedDistance());
+            new DropDown(driver, "PDistType").selectOption(workoutQuickAdd.getPlannedDistanceType());
+            new Input(driver, "PDuration").write(workoutQuickAdd.getPlannedDuration());
+        }
         new Input(driver, "Distance").write(workoutQuickAdd.getDistance());
-        new DropDown(driver, "DistType").selectDropdown(workoutQuickAdd.getDistanceType());
+        new DropDown(driver, "DistType").selectOption(workoutQuickAdd.getDistType());
         new Input(driver, "Duration").write(workoutQuickAdd.getDuration());
         new Input(driver, "Pace").write(workoutQuickAdd.getPace());
-        new DropDown(driver, "PaceType").selectDropdown(workoutQuickAdd.getPaceType());
-        new DropDown(driver, "HowFeel").selectDropdown(workoutQuickAdd.getHowIFelt());
-        new DropDown(driver, "PerEffort").selectDropdown(workoutQuickAdd.getPerceivedEffort());
-        new TextArea(driver, "PostDesc").fillDescription(workoutQuickAdd.getPostNotes());
-        new Checkbox(driver, "SaveLibrary").toggleCheckbox();
-
-        return clickAddWorkout();
+        new DropDown(driver, "PaceType").selectOption(workoutQuickAdd.getPaceType());
+        new DropDown(driver, "HowFeel").selectOption(workoutQuickAdd.getHowIFelt());
+        new DropDown(driver, "PerEffort").selectOption(workoutQuickAdd.getPerceivedEffort());
+        new TextArea(driver, "PostDesc").write(workoutQuickAdd.getPostDesc());
+        new Checkboxes(driver, "SaveLibrary").tickCheckbox(workoutQuickAdd.isSaveLibrary());
+        log.info("Fill in the data " + workoutQuickAdd);
+        clickSaveButton();
     }
 
-    @Step("Click Add Button")
-    public WorkoutQuickAddPage clickAddWorkout() {
+    @Step("Click Add Workout button")
+    public WorkoutQuickAddPage clickSaveButton() {
         driver.findElement(ADD_WORKOUT_BUTTON).click();
-        log.info("Clicked Add Workout button by id: " + ADD_WORKOUT_BUTTON);
+        log.info("Click Add Workout button by id: " + ADD_WORKOUT_BUTTON);
         return new WorkoutQuickAddPage(driver);
     }
-    @Step("Find element to make sure that page is open")
+
+    @Step("Check that Workout Quick Add page is opened")
     @Override
     public boolean isPageOpen() {
         return isExist(QUICK_ADD_WORKOUT_TITLE);

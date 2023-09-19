@@ -4,8 +4,10 @@ import lombok.extern.log4j.Log4j2;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+
 @Log4j2
 public class TestListener implements ITestListener {
+
     @Override
     public void onTestStart(ITestResult result) {
         log.info("TEST START: " + result.getName());
@@ -36,8 +38,11 @@ public class TestListener implements ITestListener {
         log.info("TEST START : " + iTestContext.getName());
 
     }
+
     @Override
     public void onFinish(ITestContext iTestContext) {
         log.info("TEST FINISH : " + iTestContext.getName());
+
+
     }
 }

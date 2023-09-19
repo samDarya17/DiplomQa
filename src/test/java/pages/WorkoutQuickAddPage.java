@@ -20,7 +20,7 @@ public class WorkoutQuickAddPage extends BasePage {
         super(driver);
     }
 
-    @Step("Add workout through the quick add")
+    @Step("Добавьте тренировку через быстрое добавление")
     public void fillInFormQuickWorkout(WorkoutQuickAdd workoutQuickAdd) {
         new Input(driver, "WorkoutDate").write(workoutQuickAdd.getDate());
         new DropDown(driver, "WorkoutTime").selectOption(workoutQuickAdd.getTime());
@@ -46,14 +46,14 @@ public class WorkoutQuickAddPage extends BasePage {
         clickSaveButton();
     }
 
-    @Step("Click Add Workout button")
+    @Step("Нажмите кнопку «Добавить тренировку»")
     public WorkoutQuickAddPage clickSaveButton() {
         driver.findElement(ADD_WORKOUT_BUTTON).click();
-        log.info("Click Add Workout button by id: " + ADD_WORKOUT_BUTTON);
+        log.info("Нажмите кнопку «Добавить тренировку по идентификатору»: " + ADD_WORKOUT_BUTTON);
         return new WorkoutQuickAddPage(driver);
     }
 
-    @Step("Check that Workout Quick Add page is opened")
+    @Step("Убедитесь, что страница быстрого добавления тренировки открыта")
     @Override
     public boolean isPageOpen() {
         return isExist(QUICK_ADD_WORKOUT_TITLE);

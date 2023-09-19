@@ -20,7 +20,7 @@ public class UserProfileModalPage extends BasePage {
         super(driver);
     }
 
-    @Step("Edit {userProfile}")
+    @Step("Редактировать {userProfile}")
     public UserProfileModalPage editProfile(UserProfile userProfile) {
         new Input(driver, "fname").write(userProfile.getFirstName());
         new Input(driver, "lname").write(userProfile.getLastName());
@@ -38,15 +38,15 @@ public class UserProfileModalPage extends BasePage {
     }
 
 
-    @Step("Save profile's changes")
+    @Step("Сохранить изменения профиля")
     public UserProfileModalPage saveProfileChanges() {
         WebElement button = driver.findElement(SAVE_EDIT_PROFILE);
         clickElementByJavascript(button);
-        log.info("Click Save Edit Profile button By id: " + SAVE_EDIT_PROFILE);
+        log.info("Нажмите кнопку «Сохранить». Редактировать профиль. По идентификатору: " + SAVE_EDIT_PROFILE);
         return this;
     }
 
-    @Step("Check that User Profile page is opened")
+    @Step("Убедитесь, что страница профиля пользователя открыта")
     @Override
     public boolean isPageOpen() {
         return isExist(PROFILE_MODAL_TITLE);

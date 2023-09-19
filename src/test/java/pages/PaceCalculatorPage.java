@@ -15,14 +15,14 @@ public class PaceCalculatorPage extends BasePage{
         super(driver);
     }
 
-    @Step("Visible Pace Calculator results")
+    @Step("Видимые результаты калькулятора темпа")
     public boolean titlePaceChartIsVisible() {
         boolean titlePaceCalculatorResultsIsVisible = driver.findElement(RESULTS_PACE_CHART_LABEL).isDisplayed();
-        log.info("Make sure that the results of the calorie requirement calculation are visible on the page");
+        log.info("Убедитесь, что результаты расчета потребности в калориях видны на странице.");
         return titlePaceCalculatorResultsIsVisible;
     }
 
-    @Step("Frame Pace Calculator is visible")
+    @Step("Калькулятор темпа кадров виден")
     @Override
     public boolean isPageOpen() {
         return isExist(PACE_CALCULATOR_TITLE);

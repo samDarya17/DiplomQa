@@ -21,14 +21,14 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    @Step("Open the Login Page")
+    @Step("Откройте страницу входа")
     public LoginPage open() {
         driver.get(BASE_URL + "login");
         log.info("Open Login page with URL + login");
         return this;
     }
 
-    @Step("Enter Username or Email: '{email}' and Password: '{password}'")
+    @Step("Введите имя пользователя или адрес электронной почты: '{email}' and Password: '{password}'")
     public LoginPage inputEmailAndPassword(String email, String password) {
         driver.findElement(EMAIL_INPUT).sendKeys(email);
         log.info("Input the email in the field");
@@ -37,26 +37,26 @@ public class LoginPage extends BasePage {
         return this;
     }
 
-    @Step("Click on the Sign In button")
+    @Step("Нажмите кнопку «Войти».")
     public PlatformSelectPage clickSignInButton() {
         driver.findElement(SIGN_IN_BUTTON).click();
         log.info("Click on Sign In button with XPath: " + SIGN_IN_BUTTON);
         return new PlatformSelectPage(driver);
     }
 
-    @Step("Get a email error message")
+    @Step("Получить сообщение об ошибке по электронной почте")
     public String getEmailErrorMessage() {
         log.info("Take the error message :" + EMAIL_ERROR_MESSAGE);
         return driver.findElement(EMAIL_ERROR_MESSAGE).getText();
     }
 
-    @Step("Get a password error message")
+    @Step("Получить сообщение об ошибке пароля")
     public String getPasswordErrorMessage() {
         log.info("Take the error message :" + PASSWORD_ERROR_MESSAGE);
         return driver.findElement(PASSWORD_ERROR_MESSAGE).getText();
     }
 
-    @Step("Get an error message")
+    @Step("Получить сообщение об ошибке")
     public String getErrorMessage() {
         String errorMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(ERROR_MESSAGE)).getText();
         log.info("Take the error message : " + errorMessage);
@@ -64,7 +64,7 @@ public class LoginPage extends BasePage {
 
     }
 
-    @Step("Checking to go to next page")
+    @Step("Проверка перехода на следующую страницу")
     @Override
     public boolean isPageOpen() {
         return isExist(SIGN_IN_BUTTON);

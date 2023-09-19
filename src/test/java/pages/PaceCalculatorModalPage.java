@@ -18,7 +18,7 @@ public class PaceCalculatorModalPage extends BasePage {
         super(driver);
     }
 
-    @Step("Filling Pace Calculator form")
+    @Step("Форма калькулятора темпа заполнения")
     public PaceCalculatorModalPage fillInForm(PaceCalculator paceCalculator) {
         new Input(driver, "RunDist").write(paceCalculator.getDistance());
         new DropDown(driver, "DistType").selectOption(paceCalculator.getDistType());
@@ -29,14 +29,14 @@ public class PaceCalculatorModalPage extends BasePage {
         return clickCalculatePacesButton();
     }
 
-    @Step("Click Calculator Paces button")
+    @Step("Нажмите кнопку «Калькулятор темпов».")
     public PaceCalculatorModalPage clickCalculatePacesButton() {
         driver.findElement(CALCULATE_PACES_BUTTON).click();
         log.info("Click Calculator Paces button by xpath: " + CALCULATE_PACES_BUTTON);
         return new PaceCalculatorModalPage(driver);
     }
 
-    @Step("Frame Pace Calculator is visible")
+    @Step("Калькулятор темпа кадров виден")
     @Override
     public boolean isPageOpen() {
         return isExist(PACE_CALCULATOR_TITLE);

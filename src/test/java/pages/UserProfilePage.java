@@ -15,22 +15,22 @@ public class UserProfilePage extends BasePage {
         super(driver);
     }
 
-    @Step("Open edit profile")
+    @Step("Открыть редактируемый профиль")
     public UserProfilePage openEditProfileForm() {
         driver.findElement(EDIT_PROFILE).click();
-        log.info("Click edit profile button with xpath:" + EDIT_PROFILE);
+        log.info("Нажмите кнопку «Редактировать профиль» с помощью XPath:" + EDIT_PROFILE);
         return new UserProfilePage(driver);
     }
 
 
-    @Step("Get text from User Profile field")
+    @Step("Получить текст из поля профиля пользователя")
     public String getFieldValue(String label) {
         String textFromUserProfileField = driver.findElement(By.xpath(String.format(userProfileField, label))).getText();
-        log.info("Get text from User Profile field by label: " + label);
+        log.info("Получить текст из поля профиля пользователя по метке: " + label);
         return textFromUserProfileField.split(":")[1].trim();
     }
 
-    @Step("Check that Profile page is opened")
+    @Step("Убедитесь, что страница профиля открыта")
     @Override
     public boolean isPageOpen() {
         return isExist(EDIT_PROFILE);

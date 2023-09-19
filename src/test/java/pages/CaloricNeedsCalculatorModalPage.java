@@ -20,10 +20,10 @@ public class CaloricNeedsCalculatorModalPage extends BasePage {
         super(driver);
     }
 
-    @Step("Filling Caloric Needs Calculator form")
+    @Step("Заполнение формы калькулятора потребности в калориях")
     public CaloricNeedsCalculatorModalPage fillInForm(CaloricNeedsCalculator caloricNeedsCalculator) {
         driver.switchTo().frame(driver.findElement(OTHER_CALCULATOR_FRAME));
-        log.info("Switched to frame by id: " + OTHER_CALCULATOR_FRAME);
+        log.info("Переключился на кадр по идентификатору: " + OTHER_CALCULATOR_FRAME);
         new Input(driver, "Weight").write(caloricNeedsCalculator.getWeight());
         new RadioButton(driver, "kg").clickRadioButtonCaloricNeedsCalculator();
         new Input(driver, "HeightInchCent").write(caloricNeedsCalculator.getHeight());
@@ -36,14 +36,14 @@ public class CaloricNeedsCalculatorModalPage extends BasePage {
         return clickSaveButton();
     }
 
-    @Step("Click save button in Caloric Needs Calculator")
+    @Step("Нажмите кнопку «Сохранить» в калькуляторе калорийности.")
     public CaloricNeedsCalculatorModalPage clickSaveButton() {
         driver.findElement(SAVE_BUTTON_CALORIC_NEEDS).click();
-        log.info("Click save button by id: " + SAVE_BUTTON_CALORIC_NEEDS);
+        log.info("Нажмите кнопку «Сохранить» по идентификатору.: " + SAVE_BUTTON_CALORIC_NEEDS);
         return new CaloricNeedsCalculatorModalPage(driver);
     }
 
-    @Step("PopUp Caloric Needs Calculator is visible")
+    @Step("Всплывающий калькулятор потребности в калориях виден")
     @Override
     public boolean isPageOpen() {
         return isExist(CALORIC_NEEDS_TITLE);

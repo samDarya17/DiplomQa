@@ -21,10 +21,10 @@ public class WorkoutCalculatorIntensityPage extends BasePage {
         super(driver);
     }
 
-    @Step("Filling Workout Calculator Intensity form")
+    @Step("Заполнение формы «Калькулятор интенсивности тренировок»")
     public WorkoutCalculatorIntensityPage fillInForm(WorkoutCalculatorIntensity workoutCalculatorIntensity) {
         driver.switchTo().frame(driver.findElement(INTENSITY_CALCULATOR_FRAME));
-        log.info("Switched to frame by id: " + INTENSITY_CALCULATOR_FRAME);
+        log.info("Переключился на кадр по идентификатору: " + INTENSITY_CALCULATOR_FRAME);
         new RadioButton(driver, "MARATHON").clickRadioButton();
         new Input(driver, "TimeHH").write(workoutCalculatorIntensity.getHours());
         new Input(driver, "TimeMM").write(workoutCalculatorIntensity.getMinutes());
@@ -33,22 +33,22 @@ public class WorkoutCalculatorIntensityPage extends BasePage {
         return clickCalculatePaces();
     }
 
-    @Step("Click Calculator Paces button")
+    @Step("Нажмите кнопку «Калькулятор темпов»")
     public WorkoutCalculatorIntensityPage clickCalculatePaces() {
         driver.findElement(CALCULATE_PACES_BUTTON).click();
         log.info("Click Calculate Paces in Workout Calculator Intensity by id: " + CALCULATE_PACES_BUTTON);
         return new WorkoutCalculatorIntensityPage(driver);
     }
 
-    @Step("Visible Workout Calculator Intensity results")
+    @Step("Видимые результаты интенсивности калькулятора тренировок")
     public boolean titleYourWorkoutPacesIsVisible() {
         boolean titleCalculatorIntensityResultsIsVisible = driver.findElement(YOUR_WORKOUT_PACES_TITLE).isDisplayed();
-        log.info("Make sure that the results of the Workout Intensity calculation are visible on the page");
+        log.info("Убедитесь, что результаты расчета интенсивности тренировки видны на странице");
         return titleCalculatorIntensityResultsIsVisible;
     }
 
 
-    @Step("Frame Workout Calculator Intensity is visible")
+    @Step("Калькулятор тренировки кадров. Интенсивность видна")
     @Override
     public boolean isPageOpen() {
         return isExist(WORKOUT_INTENSITY_CALCULATOR_TITLE);

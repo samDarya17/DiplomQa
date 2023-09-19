@@ -5,20 +5,15 @@
     <test name="Stream 1">
         <classes>
             <class name="tests.LoginTest"/>
-            <class name="tests.PlatformSelectTest"/>
+            <class name="tests.PaceCalculatorTest"/>
         </classes>
     </test> <!-- Test -->
 
     <test name="Stream 2">
         <classes>
-            <class name="tests.UserProfileTest"/>
-        </classes>
-    </test> <!-- Test -->
-
-    <test name="Stream 3">
-        <classes>
             <class name="tests.WorkoutQuickAddTest"/>
         </classes>
     </test> <!-- Test -->
+
 
 </suite>

@@ -19,23 +19,23 @@ public class CaloricNeedsCalculatorPage extends BasePage {
         super(driver);
     }
 
-    @Step("Open Pace Calculators")
+    @Step("Открытые калькуляторы темпа")
     public PaceCalculatorModalPage clickPaceCalculatorButton() {
         driver.switchTo().frame(driver.findElement(OTHER_CALCULATORS_FRAME));
-        log.info("Switched to frame by id: " + OTHER_CALCULATORS_FRAME);
+        log.info("Переключился на кадр по идентификатору: " + OTHER_CALCULATORS_FRAME);
         driver.findElement(PACE_CALCULATOR_BUTTON).click();
-        log.info("Click Pace Calculator button by xpath: " + PACE_CALCULATOR_BUTTON);
+        log.info("Нажмите кнопку «Калькулятор темпа» с помощью XPath.: " + PACE_CALCULATOR_BUTTON);
         return new PaceCalculatorModalPage(driver);
     }
 
-    @Step("Visible Caloric Needs Calculator results")
+    @Step("Результаты калькулятора видимых калорийных потребностей")
     public boolean titleCaloricNeedsCalculatorIsVisible() {
         boolean titleIsVisible = driver.findElement(RESULTS_CALORIC_NEEDS_CALCULATOR).isDisplayed();
-        log.info("Make sure that the results of the calorie requirement calculation are visible on the page");
+        log.info("Убедитесь, что результаты расчета потребности в калориях видны на странице.");
         return titleIsVisible;
     }
 
-    @Step("Check that Caloric Needs Calculators page is opened")
+    @Step("Убедитесь, что страница «Калькуляторы потребности в калориях» открыта.")
     @Override
     public boolean isPageOpen() {
         return isExist(CALORIC_NEEDS_TITLE);

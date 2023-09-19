@@ -20,40 +20,40 @@ public class CalendarPage extends BasePage {
         super(driver);
     }
 
-    @Step("Open Profile Page")
+    @Step("Открыть страницу профиля")
     public UserProfilePage clickSettingsButton() {
         driver.findElement(SETTINGS_BUTTON).click();
         log.info("Click sitting button by xpath: " + SETTINGS_BUTTON);
         return new UserProfilePage(driver);
     }
 
-    @Step("Open Quick Workout")
+    @Step("Открыть быструю тренировку")
     public CalendarPage clickQuickAdd() {
         driver.findElement(QUICK_ADD_BUTTON).click();
         log.info("Click Quick Add button by id: " + QUICK_ADD_BUTTON);
         return new CalendarPage(driver);
     }
 
-    @Step("The added quick workout is visible in the calendar")
+    @Step("Добавленная быстрая тренировка видна в календаре.")
     public boolean addedQuickWorkoutIsVisible() {
-        log.info("Check that the added quick workout is visible in the calendar by xpath");
+        log.info("Убедитесь, что добавленная быстрая тренировка видна в календаре с помощью XPath.");
         return driver.findElement(By.xpath(addedQuickWorkout)).isDisplayed();
     }
 
-    @Step("Open Other Calculator page")
+    @Step("Открыть страницу «Другой калькулятор»")
     public CaloricNeedsCalculatorPage clickOtherCalculators() {
         driver.findElement(OTHER_CALCULATORS_BUTTON).click();
-        log.info("Click on other calculators by id: " + OTHER_CALCULATORS_BUTTON);
+        log.info("Нажмите на другие калькуляторы по идентификатору: " + OTHER_CALCULATORS_BUTTON);
         return new CaloricNeedsCalculatorPage(driver);
     }
 
     public WorkoutCalculatorIntensityPage clickWorkoutCalculators() {
         driver.findElement(WORKOUT_CALCULATORS).click();
-        log.info("Click Workout Calculators by xpath: " + WORKOUT_CALCULATORS);
+        log.info("Нажмите «Калькуляторы тренировок» от xpath.: " + WORKOUT_CALCULATORS);
         return new WorkoutCalculatorIntensityPage(driver);
     }
 
-    @Step("Calendar page is open")
+    @Step("Страница календаря открыта")
     @Override
     public boolean isPageOpen() {
         return isExist(CALENDER_PAGE_TITLE);

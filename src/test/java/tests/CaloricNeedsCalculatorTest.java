@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Step;
 import models.CaloricNeedsCalculator;
 import models.CaloricNeedsCalculatorFactory;
 import org.testng.annotations.Test;
@@ -8,7 +9,8 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 public class CaloricNeedsCalculatorTest extends BaseTest {
-    @Test(description = "Using Caloric Calculator to calculate caloric needs")
+    @Step("Использование калькулятора калорий")
+    @Test(description = "Использование калькулятора калорий для расчета потребности в калориях")
     public void caloricCalculatorTest() {
         loginPage
                 .open()

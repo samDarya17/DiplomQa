@@ -6,8 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="cf56c108-b20e-4c4c-90bc-88d720a2d9ab" name="Changes" comment="тест план/чек лист/">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/CalendarPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/CalendarPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/CaloricNeedsCalculatorModalPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/CaloricNeedsCalculatorModalPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/CaloricNeedsCalculatorPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/CaloricNeedsCalculatorPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PaceCalculatorModalPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PaceCalculatorModalPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PaceCalculatorPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PaceCalculatorPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PlatformSelectPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PlatformSelectPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/UserProfileModalPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/UserProfileModalPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/UserProfilePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/UserProfilePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/WorkoutCalculatorIntensityPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/WorkoutCalculatorIntensityPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/WorkoutQuickAddPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/WorkoutQuickAddPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CaloricNeedsCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CaloricNeedsCalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/PaceCalculatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/PaceCalculatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/WorkoutQuickAddTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/WorkoutQuickAddTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/regression.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/regression.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +85,7 @@
       <recent name="D:\q1022 Java\untitled3\docs" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.LoginTest">
+  <component name="RunManager" selected="TestNG.D:/q1022 Java/DiplomQaф/src/test/resources/regression.xml">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="FinalSurge" />
       <method v="2">
@@ -84,18 +99,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DailyVitalsTest.viewVitalsTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="JEFIT" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.DailyVitalsTest" />
-      <option name="METHOD_NAME" value="viewVitalsTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
+    <configuration name="D:/q1022 Java/DiplomQaф/src/test/resources/regression.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="FinalSurgeProject" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/regression.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
       <method v="2">
@@ -119,8 +126,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTest.inputValidEmailAndPassword" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="JEFIT" />
+    <configuration name="LoginTest.emailAndPasswordValidDate" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="FinalSurgeProject" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="tests.*" />
@@ -129,7 +136,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.LoginTest" />
-      <option name="METHOD_NAME" value="inputValidEmailAndPassword" />
+      <option name="METHOD_NAME" value="emailAndPasswordValidDate" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -137,8 +144,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTest.negativeLoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="JEFIT" />
+    <configuration name="PaceCalculatorTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="FinalSurgeProject" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="tests.*" />
@@ -146,17 +153,16 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.LoginTest" />
-      <option name="METHOD_NAME" value="negativeLoginTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="MAIN_CLASS_NAME" value="tests.PaceCalculatorTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LoginTest.positiveLoginTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="JEFIT" />
+    <configuration name="WorkoutQuickAddTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="FinalSurgeProject" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="tests.*" />
@@ -164,9 +170,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.LoginTest" />
-      <option name="METHOD_NAME" value="positiveLoginTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="MAIN_CLASS_NAME" value="tests.WorkoutQuickAddTest" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -175,11 +180,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.D:/q1022 Java/DiplomQaф/src/test/resources/regression.xml" />
+        <item itemvalue="TestNG.WorkoutQuickAddTest" />
+        <item itemvalue="TestNG.PaceCalculatorTest" />
         <item itemvalue="TestNG.LoginTest" />
-        <item itemvalue="TestNG.LoginTest.inputValidEmailAndPassword" />
-        <item itemvalue="TestNG.DailyVitalsTest.viewVitalsTest" />
-        <item itemvalue="TestNG.LoginTest.positiveLoginTest" />
-        <item itemvalue="TestNG.LoginTest.negativeLoginTest" />
+        <item itemvalue="TestNG.LoginTest.emailAndPasswordValidDate" />
       </list>
     </recent_temporary>
   </component>
@@ -283,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695120984224</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="тест план/чек лист/">
+      <created>1695122032637</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1695122032637</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">

@@ -9,7 +9,7 @@ import static org.testng.Assert.*;
 
 public class WorkoutQuickAddTest extends BaseTest {
 
-    @Test(description = "Filling form Quick Workout")
+    @Test(description = "Заполнение формы быстрой тренировки")
     public void addQuickWorkout() {
         loginPage
                 .open()

@@ -15,15 +15,15 @@ public class PlatformSelectPage extends BasePage {
         super(driver);
     }
 
-    @Step("Select platform")
+    @Step("Выберите платформу")
     public PlatformSelectPage selectPlatform() {
         driver.findElement(CONTINUE_WITH_CLASSIC).click();
-        log.info("Select platform with xpath: " + CONTINUE_WITH_CLASSIC);
+        log.info("Выберите платформу с помощью XPath: " + CONTINUE_WITH_CLASSIC);
         return this;
     }
 
 
-    @Step("Check that Select platform page is opened")
+    @Step("Убедитесь, что страница выбора платформы открыта")
     @Override
     public boolean isPageOpen() {
         return isExist(SELECT_PLATFORM_LABEL);

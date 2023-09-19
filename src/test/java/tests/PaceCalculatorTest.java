@@ -9,7 +9,7 @@ import static org.testng.Assert.*;
 
 public class PaceCalculatorTest extends BaseTest {
 
-    @Test(description = "Using Pace Calculator to calculate paces")
+    @Test(description = "Использование калькулятора темпа для расчета темпов")
     public void editProfilePageShouldBeOpened() {
         loginPage
                 .open()

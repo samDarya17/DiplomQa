@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
 
-    @Test(description = "Check that validation is successful when entering a login and password")
+    @Test(description = "Убедитесь, что проверка прошла успешно при вводе логина и пароля")
     public void emailAndPasswordValidDate() {
         loginPage.open()
                 .inputEmailAndPassword(email, password)
@@ -18,7 +18,7 @@ public class LoginTest extends BaseTest {
 
     }
 
-    @Test(description = "leave the password field blank")
+    @Test(description = "Оставьте поле пароля пустым")
     public void blankPasswordField() {
         loginPage
                 .open()
@@ -29,7 +29,7 @@ public class LoginTest extends BaseTest {
                 "Текст сообщения неверный или отсутствует");
     }
 
-    @Test(description = "leave the email field blank")
+    @Test(description = "Оставьте поле емаил пустым")
     public void blankEmailField() {
         loginPage.open()
                 .inputEmailAndPassword("", password)
@@ -39,20 +39,20 @@ public class LoginTest extends BaseTest {
                 "Текст сообщения неверный или отсутствует");
     }
 
-    @Test(description = "invalid email")
+    @Test(description = "Неверный адрес электронной почты")
     public void invalidEmail() {
         loginPage.open()
-                .inputEmailAndPassword("vvvdufna@mailto.plus", password)
+                .inputEmailAndPassword("Varasamoi@gmail.com", password)
                 .clickSignInButton();
 
         assertEquals(loginPage.getErrorMessage(), "Invalid login credentials. Please try again.",
                 "Текст сообщения неверный или отсутствует");
     }
 
-    @Test(description = "invalid password")
+    @Test(description = "Неверный пароль")
     public void invalidPassword() {
         loginPage.open()
-                .inputEmailAndPassword(email, "12345Alkkk")
+                .inputEmailAndPassword(email, "121asas")
                 .clickSignInButton();
 
         assertEquals(loginPage.getErrorMessage(), "Invalid login credentials. Please try again.",
